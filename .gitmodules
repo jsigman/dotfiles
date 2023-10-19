@@ -1,0 +1,3 @@
+[submodule "all/.emacs.d"]
+	path = all/.emacs.d
+	url = git@github.com:jsigman/emacs-config.git

@@ -1,0 +1,5 @@
+# Follow symlinks
+--follow
+# Because who cares about case!?
+--smart-case
+--max-depth=6

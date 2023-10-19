@@ -1,0 +1,23 @@
+* dotfiles
+For tracking my own dotfiles
+
+* Cloning [[https://github.com/jsigman/emacs-config][emacs-config]] as a submodule
+
+I track the ~emacs~ content of my content in a separate public facing-repo, but I want it nested here as a submodule at the path ~~/.emacs.d~.
+
+** In order to clone this repository
+#+begin_src sh
+git clone --recurse-submodules git@github.com:jsigman/dotfiles.git
+#+end_src
+
+** To add the ~emacs-config~ repository as a submodule
+#+begin_src sh
+git submodule add git@github.com:jsigman/emacs-config.git all/.emacs.d/
+#+end_src
+
+** To update the emacs config
+#+begin_src sh
+git submodule update --remote
+#+end_src
+
+#+RESULTS:

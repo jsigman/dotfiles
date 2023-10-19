@@ -1,0 +1,8 @@
+# Enable tab completion                                                         
+import rlcompleter                                                              
+import pdb                                                                      
+
+pdb.Pdb.complete = rlcompleter.Completer(locals()).complete
+
+# Print instance variables (usage "pi classInst")
+alias pi for k in %1.__dict__.keys(): print("%1.",k,"=",%1.__dict__[k])

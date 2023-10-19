@@ -1,0 +1,36 @@
+# Node
+npm-debug.log
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# vi
+*~
+
+# emacs
+\#*
+.dir-locals.el
+pyrightconfig.json
+.projectile
+.ob-jupyter/
+
+# python
+typings/
+
+# General
+log/
+*.log
+
+# etc...
+
+# I often use these folders to store non-source material
+/notes
+
+# direnv
+/.envrc

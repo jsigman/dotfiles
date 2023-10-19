@@ -1,0 +1,18 @@
+[core]
+    excludesfile = ~/.gitignore
+    [filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[user]
+    name = John Sigman
+    email = john.sigman@gmail.com
+[github]
+    user = jsigman
+[gitlab]
+    user = johnny.sigman
+[pull]
+    rebase = false
+[url "ssh://git@gitlab.com/"]
+    insteadOf = https://gitlab.com/

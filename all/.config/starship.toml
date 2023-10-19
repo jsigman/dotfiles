@@ -1,0 +1,89 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+format = """
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$time\
+$status\
+$shell\
+$character"""
+
+[directory]
+style="red"
+
+[cmd_duration]
+min_time = 4
+
+[conda]
+disabled=true
+style="blue"
+symbol=""
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 20
+truncation_symbol = ""
+ignore_branches = ["master", "main"]
+
+[python]
+disabled=false
+symbol=""
+pyenv_version_name = true
+pyenv_prefix = ""
+style="red"
+
+[aws]
+disabled=true
+
+[hostname]
+disabled=false
+ssh_only=true
+ssh_symbol=''
+format='[$ssh_symbol$hostname]($style) '
