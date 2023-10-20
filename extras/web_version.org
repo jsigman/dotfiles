@@ -1,0 +1,86 @@
+#+BEGIN_EXPORT markdown
+---
+layout: post
+title: Literate Dotfiles
+category: fun
+tags: 
+keywords: emacs
+description: Sharing my literate dotfiles config
+importance: 2
+date: 2023-10-20
+---
+#+end_export
+
+#+title: dotfiles
+#+author: Johnny Sigman
+#+OPTIONS: toc:nil
+#+PROPERTY: header-args :dir ".."
+
+* About
+
+This web page is a tangled version of my literate [[https://github.com/jsigman/dotfiles][dotfiles]].
+
+* All Operating Systems
+
+** .condarc
+#+include: "all/.condarc" src
+
+** .config
+
+*** alacritty
+**** alacritty.yml
+#+include: "all/.config/alacritty/alacritty.yml" src yaml
+
+*** dvc
+**** config
+#+include: "all/.config/dvc/config" src
+
+*** fish
+**** config.fish
+#+include: "all/.config/fish/config.fish" src fish
+
+*** flake8
+#+include: "all/.config/flake8" src
+
+*** karabiner
+**** karabiner.json
+#+include: "all/.config/karabiner/karabiner.json" src json
+
+*** kitty
+**** kitty.conf
+#+include: "all/.config/kitty/kitty.conf" src conf
+
+*** ripgreprc
+#+include: "all/.config/ripgreprc" src
+
+*** starship.toml
+#+include: "all/.config/starship.toml" src toml
+
+** .gitconfig
+#+include: "all/.gitconfig" src
+
+** .gitignore
+#+include: "all/.gitignore" src
+
+** .ipython
+
+*** profile_default
+
+**** startup
+***** org.py
+#+include: "all/.ipython/profile_default/startup/org.py" src python
+
+** .pdbrc
+#+include: "all/.pdbrc" src
+
+** .pdbrc.py
+#+include: "all/.pdbrc.py" src python
+
+** .pylintrc
+#+include: "all/.pylintrc" src
+
+** .screenrc
+#+include: "all/.screenrc" src
+
+** .tmux.conf
+#+include: "all/.tmux.conf" src conf
