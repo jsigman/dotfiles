@@ -12,23 +12,13 @@
  :ensure t
  :init (setq org-jekyll-md-include-yaml-front-matter nil))
 
-(defun my/org-export-filter-src-blocks (backend)
-  (when (eq backend 'jekyll)
-    (goto-char (point-min))
-    (while (re-search-forward
-            "^#\\+begin_src\\s-+emacs-lisp\\(.*:load\\s-+no.*\\)$"
-            nil t)
-      (replace-match "#+begin_src plaintext"))))
-(add-hook
- 'org-export-before-processing-hook 'my/org-export-filter-src-blocks)
-
 ;; Set current buffer to the publishable org buffer
-(find-file "extras/web_version.org")
+(find-file "web_version.org")
 
 ;; Manually process #+INCLUDE: directives
 (org-export-expand-include-keyword)
 
-(let ((md-buffer (find-file-noselect "../dotfiles.md")))
+(let ((md-buffer (find-file-noselect "dotfiles.md")))
 (org-export-to-buffer 'jekyll md-buffer
     nil nil nil nil nil (lambda () (text-mode)))
 ; Save the buffer
