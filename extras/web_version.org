@@ -6,6 +6,7 @@ category: fun
 tags: 
 keywords: emacs
 description: Sharing my literate dotfiles config
+img: assets/img/dotfiles.png
 importance: 2
 date: 2023-10-20
 ---
