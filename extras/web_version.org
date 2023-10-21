@@ -67,7 +67,7 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 
 ** .ipython
 
-*** profile_default
+*** profile\_default
 
 **** startup
 ***** org.py
@@ -90,7 +90,7 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 
 * Linux
 
-** .bash_profile
+** .bash\_profile
 #+include: "../linux/.bash_profile" src bash
 
 * MacOS
@@ -101,7 +101,7 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 * Extras
 
 ** Pyrightconfig
-#+include: "../extras/pyrightconfig.json" json
+#+include: "../extras/pyrightconfig.json" src json
 
 ** Python project .dir-locals.el
-#+include: "../extras/.dir-locals.el" emacs-lisp
+#+include: "../extras/.dir-locals.el" src emacs-lisp
