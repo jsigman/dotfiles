@@ -67,11 +67,9 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 #+include: "../all/.gitignore" src
 
 ** .ipython
+*** org.py
+File located at ~.ipython/profile_default/startup/org.py~.
 
-*** profile\_default
-
-**** startup
-***** org.py
 #+include: "../all/.ipython/profile_default/startup/org.py" src python
 
 ** .pdbrc
@@ -91,7 +89,7 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 
 * Linux
 
-** .bash\_profile
+** .bash profile
 #+include: "../linux/.bash_profile" src bash
 
 * MacOS
