@@ -1,0 +1,57 @@
+name: publish
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "publish"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup emacs
+        run: |
+          sudo apt-add-repository ppa:ubuntu-elisp/ppa
+          sudo apt-get update
+          sudo apt-get install emacs-snapshot
+          emacs --version
+      - name: Publish to markdown
+        run: |
+          emacs --batch --load .github/publish.el
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          files: dotfiles.md
+      - name: Clear old releases
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          keep_latest: 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Trigger rebuild of the website
+        run: |
+          curl -X POST \
+               -H "Authorization: token ${{ secrets.WEBSITE_BUILD }}" \
+               -H "Accept: application/vnd.github.v3+json" \
+               https://api.github.com/repos/jsigman/jsigman.github.io/actions/workflows/deploy.yml/dispatches \
+               -d '{"ref":"master"}'
+      - name: Close
+        run: exit 0
