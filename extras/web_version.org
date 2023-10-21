@@ -29,9 +29,7 @@ This web page is an org-tangled version of my literate [[https://github.com/jsig
 
 *** alacritty
 **** alacritty.yml
-<div style="max-height: 300px; overflow-y: auto; overflow-x: auto; border: 1px solid #ddd; padding: 10px; border-radius: 4px;">
 #+include: "../all/.config/alacritty/alacritty.yml" src yaml
-</div>
 
 *** dvc
 **** config
