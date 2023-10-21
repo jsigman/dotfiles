@@ -2,3 +2,6 @@
 *~
 #*
 !/.dir-locals.el
+!/extras/.dir-locals.el
+!/extras/pyrightconfig.json
+

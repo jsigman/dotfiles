@@ -1,0 +1,24 @@
+{
+  "venvPath": ".",
+  "venv": "venv",
+  "include": ["script", "tests"],
+  "exclude": [
+    "notes",
+    "models",
+    "notebooks",
+    "docker",
+    "**/node_modules",
+    "**/__pycache__",
+    ".git"
+  ],
+  "verboseOutput": true,
+  "reportTypeshedErrors": true,
+  "typeCheckingMode": false,
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "useLibraryCodeForTypes": true,
+  "autoSearchPaths": true,
+  "autoImportCompletions": false,
+  "pythonVersion": "3.8.13"
+  "stubPath": "typings",
+}
