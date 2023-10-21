@@ -17,9 +17,8 @@ date: 2023-10-20
 #+OPTIONS: toc:nil
 
 * About
-#+MACRO: basedir ../all
 
-This web page is a tangled version of my literate [[https://github.com/jsigman/dotfiles][dotfiles]].
+This web page is an org-tangled version of my literate [[https://github.com/jsigman/dotfiles][dotfiles]].
 
 * All Operating Systems
 
@@ -88,3 +87,13 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 
 ** .tmux.conf
 #+include: "../all/.tmux.conf" src conf
+
+* Linux
+
+** .bash_profile
+#+include: "../linux/.bash_profile" src bash
+
+* MacOS
+
+** .zprofile
+#+include: "../mac/.zprofile" src zsh
