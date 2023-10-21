@@ -35,14 +35,14 @@ This web page is an org-tangled version of my literate [[https://github.com/jsig
 
 *** dvc
 **** config
-#+include: "../all/.config/dvc/config" src
+#+include: "../all/.config/dvc/config" src conf
 
 *** fish
 **** config.fish
 #+include: "../all/.config/fish/config.fish" src fish
 
 *** flake8
-#+include: "../all/.config/flake8" src
+#+include: "../all/.config/flake8" src conf
 
 *** karabiner
 **** karabiner.json
@@ -60,7 +60,7 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 #+include: "../all/.config/starship.toml" src toml
 
 ** .gitconfig
-#+include: "../all/.gitconfig" src
+#+include: "../all/.gitconfig" src conf
 
 ** .gitignore
 #+include: "../all/.gitignore" src
@@ -74,16 +74,16 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 #+include: "../all/.ipython/profile_default/startup/org.py" src python
 
 ** .pdbrc
-#+include: "../all/.pdbrc" src
+#+include: "../all/.pdbrc" src python
 
 ** .pdbrc.py
 #+include: "../all/.pdbrc.py" src python
 
 ** .pylintrc
-#+include: "../all/.pylintrc" src
+#+include: "../all/.pylintrc" src conf
 
 ** .screenrc
-#+include: "../all/.screenrc" src
+#+include: "../all/.screenrc" src sh
 
 ** .tmux.conf
 #+include: "../all/.tmux.conf" src conf
@@ -97,3 +97,11 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 
 ** .zprofile
 #+include: "../mac/.zprofile" src zsh
+
+* Extras
+
+** Pyrightconfig
+#+include: "../extras/pyrightconfig.json" json
+
+** Python project .dir-locals.el
+#+include: "./extras/.dir-locals.el" emacs-lisp
