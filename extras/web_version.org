@@ -29,8 +29,10 @@ This web page is an org-tangled version of my [[https://github.com/jsigman/dotfi
 
 *** alacritty
 **** alacritty.yml
-#+include: "../all/.config/alacritty/alacritty.yml" src yaml
-
+This config is just too long to display here, so I leave it until I can get ~max_height~ blocks working with liquid matter.
+#+BEGIN_SRC org :exports none
+##+include: "../all/.config/alacritty/alacritty.yml" src yaml
+#+END_SRC
 *** dvc
 **** config
 #+include: "../all/.config/dvc/config" src conf
@@ -49,8 +51,9 @@ This web page is an org-tangled version of my [[https://github.com/jsigman/dotfi
 *** kitty
 **** kitty.conf
 This breaks liquid matter for right now, so I'm not going to share it as a web page until I can figure this out.
+#+BEGIN_SRC org :exports none
 ##+include: "../all/.config/kitty/kitty.conf" src conf
-
+#+END_SRC
 *** ripgreprc
 #+include: "../all/.config/ripgreprc" src
 
