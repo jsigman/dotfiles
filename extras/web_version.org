@@ -104,4 +104,4 @@ This breaks liquid matter for right now, so I'm not going to share it as a web p
 #+include: "../extras/pyrightconfig.json" json
 
 ** Python project .dir-locals.el
-#+include: "./extras/.dir-locals.el" emacs-lisp
+#+include: "../extras/.dir-locals.el" emacs-lisp
