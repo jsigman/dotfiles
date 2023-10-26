@@ -8,14 +8,21 @@ pathmunge () {
         fi
 }
 
-# check to see if there is any mention of starship bashrc.
-# if there isn't then add it
-if [ "1" -gt $(grep "starship" ${HOME}/.bashrc | wc -l) ]; then
-    echo "eval \"\$(starship init bash)\"" >> ${HOME}/.bashrc
-fi
-
 # TERMINAL -- TAB COMPLETEION, IGNORE CASE
 bind 'set completion-ignore-case on'
+source ~/.bashrc
 
-# eval "$(starship init bash)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+export PYENV_VERSION=3.8.13
+eval "$(pyenv init -)"
+
+eval "$(starship init bash)"
+eval "$(direnv hook bash)"
 echo ran bash_profile
+
+direnv reload 2>/dev/null
+
+touch ~/.flags/bash-profile-$(date +%s)
