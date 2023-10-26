@@ -34,3 +34,6 @@ log/
 
 # direnv
 /.envrc
+
+# lsyncd
+lsyncd.conf
