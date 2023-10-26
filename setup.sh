@@ -14,6 +14,7 @@ else
             python install.py
         else
             echo "Python is still not available. Please ensure you have a version installed with pyenv or install Python manually."
+            echo $(pwd)
             exit 1
         fi
     else
