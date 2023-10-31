@@ -10,7 +10,6 @@ pathmunge () {
 
 # TERMINAL -- TAB COMPLETEION, IGNORE CASE
 bind 'set completion-ignore-case on'
-source ~/.bashrc
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
