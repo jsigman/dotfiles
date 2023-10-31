@@ -21,8 +21,7 @@ eval "$(pyenv init -)"
 
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
-echo ran bash_profile
 
 direnv reload 2>/dev/null
-
-touch ~/.flags/bash-profile-$(date +%s)
+export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
+echo ran bash_profile
