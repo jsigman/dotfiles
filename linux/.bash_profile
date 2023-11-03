@@ -10,7 +10,6 @@ pathmunge () {
 
 # TERMINAL -- TAB COMPLETEION, IGNORE CASE
 bind 'set completion-ignore-case on'
-source ~/.bashrc
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -21,8 +20,7 @@ eval "$(pyenv init -)"
 
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
-echo ran bash_profile
 
 direnv reload 2>/dev/null
-
-touch ~/.flags/bash-profile-$(date +%s)
+export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
+echo ran bash_profile
