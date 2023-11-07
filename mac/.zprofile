@@ -68,3 +68,4 @@ fi
 
 # set environment variable from file
 export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
+alias ls='ls --color=auto'
