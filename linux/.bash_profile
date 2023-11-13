@@ -25,3 +25,9 @@ direnv reload 2>/dev/null
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
 echo ran bash_profile
 alias ls='ls --color=auto'
+
+shopt -s histappend # append to history file, don't overwrite it
+HISTSIZE=10000
+HISTFILESIZE=10000
+HISTTIMEFORMAT="%d/%m/%y %T "
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
