@@ -31,3 +31,6 @@ HISTSIZE=10000
 HISTFILESIZE=10000
 HISTTIMEFORMAT="%d/%m/%y %T "
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
+
+export LESSOPEN="| pygmentize -g %s"
+export LESS='-R'
