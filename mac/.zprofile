@@ -73,3 +73,10 @@ alias ls='ls --color=auto'
 export LESSOPEN="| pygmentize -g %s"
 export LESS='-R'
 
+function remote() {
+    local remote_host="$REMOTE_HOST"
+    local remote_path="$REMOTE_PATH"
+
+    ssh -t "${REMOTE_HOST}" "cd ${REMOTE_PATH} && exec \$SHELL -l"
+}
+
