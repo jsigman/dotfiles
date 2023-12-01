@@ -1,1 +1,3 @@
 shell -$SHELL -c "direnv reload 2>/dev/null; exec $SHELL"
+termcapinfo xterm* ti@:te@
+defscrollback 10000
