@@ -1,3 +1,4 @@
+shell -$SHELL # so that it loads .bash_profile / .zprofile
 shell -$SHELL -c "direnv reload 2>/dev/null; exec $SHELL"
 termcapinfo xterm* ti@:te@
 defscrollback 10000
