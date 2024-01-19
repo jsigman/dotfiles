@@ -30,7 +30,6 @@ eval "$(pyenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 
-eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 direnv reload 2>/dev/null
@@ -52,7 +51,6 @@ export LIBRARY_PATH="/opt/homebrew/lib/:/opt//homebrew/lib/gcc/11/"
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
-echo ran bash profile
 
 # auto completion for stuff like makefiles
 autoload -U compinit
@@ -79,4 +77,5 @@ function remote() {
 
     ssh -t "${REMOTE_HOST}" "cd ${REMOTE_PATH} && exec \$SHELL -l"
 }
-
+eval "$(starship init zsh)"
+echo ran bash profile
