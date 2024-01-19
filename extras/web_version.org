@@ -97,6 +97,9 @@ File located at ~.ipython/profile_default/startup/org.py~.
 ** .zprofile
 #+include: "../mac/.zprofile" src zsh
 
+** .zshrc
+#+include: "../mac/.zshrc" src zsh
+
 * Extras
 
 ** Pyrightconfig

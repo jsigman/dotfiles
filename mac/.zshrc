@@ -59,7 +59,6 @@ function select-word-style-lazy() {
     }
     select-word-style-lazy "$@"
 }
-
 # Alias the original function name to our lazy loader
 alias select-word-style='select-word-style-lazy'
 
