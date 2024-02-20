@@ -28,3 +28,6 @@ fi
 
 # set environment variable from file
 export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
+
+# Created by `pipx` on 2024-02-01 09:45:16
+export PATH="$PATH:/Users/jsigman/.local/bin"
