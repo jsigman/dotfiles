@@ -21,6 +21,13 @@ function remote() {
 
     ssh -t "${REMOTE_HOST}" "cd ${REMOTE_PATH} && exec \$SHELL -l"
 }
+function coder-start() {
+    coder start $CODER_USERNAME/$CODER_INSTANCE_NAME
+}
+function dcv-connect() {
+    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443 &
+    open -a "DCV Viewer" --args localhost:8443
+}
 
 alias ls='ls --color=auto'
 
@@ -49,3 +56,4 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Created by `pipx` on 2024-02-01 09:45:16
 export PATH="$PATH:/Users/jsigman/.local/bin"
+export PATH="/opt/homebrew/opt/m4/bin:$PATH"
