@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# coder dotfiles -y https://github.com/jsigman/dotfiles.git
+
 # Preamble
 CLONE_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/dotfiles_backup"
