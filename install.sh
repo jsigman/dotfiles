@@ -22,6 +22,9 @@ curl -sS https://starship.rs/install.sh | sh
 # Install other utilities
 sudo apt update && sudo apt install -y pandoc direnv tmux
 
+# Add here the installation of Fish shell
+sudo apt install -y fish
+
 # Configure Nvidia
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 
@@ -31,5 +34,13 @@ sudo systemctl isolate graphical.target
 
 # Enable dcvserver service
 sudo systemctl enable dcvserver
+
+# Add Fish shell to the list of allowed shells (if not already present)
+if ! grep -q "^$(which fish)$" /etc/shells; then
+  echo "$(which fish)" | sudo tee -a /etc/shells
+fi
+
+# Change the default shell to Fish for the current user
+chsh -s $(which fish)
 
 echo "Installation and configuration completed."
