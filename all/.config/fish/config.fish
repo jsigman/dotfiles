@@ -75,12 +75,47 @@ set -gx LESSOPEN "| pygmentize -g %s"
 set -gx LESS '-R'
 set -gx PYENV_VERSION 3.8.13
 set PATH $PATH /Users/jsigman/.local/bin
-set PATH /opt/homebrew/opt/m4/bin $PATH
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Initialization scripts adaptation (needs manual intervention for exact paths and commands)
 # Example for pyenv, adjust according to specific init scripts provided or manually
-# pyenv init - | source
-# direnv hook fish | source
-# starship init fish | source
+pyenv init - | source
+direnv hook fish | source
+starship init fish | source
+
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+
+# to build emacs
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm@12/lib"
+export LDFLAGS="-L/opt/homebrew/lib $LDFLAGS"
+export LDFLAGS="-L/opt/homebrew/lib/gcc/11 $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm@12/include"
+export CPPFLAGS="-I/opt/homebrew/include $CPPFLAGS"
+export LD_LIBRARY_PATH="/opt/homebrew/lib/:/opt//homebrew/lib/gcc/11/"
+export LIBRARY_PATH="/opt/homebrew/lib/:/opt//homebrew/lib/gcc/11/"
+
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgreprc"
+
+if test -d "$HOME/Applications/Emacs.app/Contents/MacOS/bin/"
+    set -gx PATH $HOME/Applications/Emacs.app/Contents/MacOS/bin $PATH
+end
+
+# set environment variable from file
+export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
+
+# Created by `pipx` on 2024-02-01 09:45:16
+export PATH="$PATH:/Users/jsigman/.local/bin"
+
 
 # Note: For initializing other tools like pyenv, direnv, you'll need to manually find or adapt initialization code for fish
+echo Ran fish configuration
