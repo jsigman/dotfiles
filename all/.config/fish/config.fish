@@ -66,8 +66,16 @@ end
 
 # Aliases
 alias ls='ls --color=auto'
-alias brew86="arch -x86_64 /usr/local/bin/brew"
-alias pyenv86="arch -x86_64 pyenv"
+
+# if on mac run the following:
+if test -d /opt/homebrew/bin
+   set -gx PATH /opt/homebrew/bin $PATH
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   #set aliases
+   alias brew86="arch -x86_64 /opt/homebrew/bin/brew"
+   alias pyenv86="arch -x86_64 pyenv"
+end
+
 alias gitroot='cd (git rev-parse --show-toplevel)'
 
 # Export statements
@@ -76,7 +84,6 @@ set -gx LESS '-R'
 set -gx PYENV_VERSION 3.8.13
 set PATH $PATH /Users/jsigman/.local/bin
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Initialization scripts adaptation (needs manual intervention for exact paths and commands)
 # Example for pyenv, adjust according to specific init scripts provided or manually
