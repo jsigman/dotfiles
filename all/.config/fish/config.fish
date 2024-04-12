@@ -69,8 +69,10 @@ alias ls='ls --color=auto'
 
 # if on mac run the following:
 if test -d /opt/homebrew/bin
-   set -gx PATH /opt/homebrew/bin $PATH
-   eval "$(/opt/homebrew/bin/brew shellenv)"
+    # Add Homebrew to PATH
+    set -gx PATH /opt/homebrew/bin $PATH
+    # Correctly use command substitution for setting shell environment variables
+    eval (env /opt/homebrew/bin/brew shellenv)
 end
 
 alias gitroot='cd (git rev-parse --show-toplevel)'
