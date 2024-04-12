@@ -72,7 +72,7 @@ if test -d /opt/homebrew/bin
     # Add Homebrew to PATH
     set -gx PATH /opt/homebrew/bin $PATH
     # Correctly use command substitution for setting shell environment variables
-    eval (env /opt/homebrew/bin/brew shellenv)
+    env /opt/homebrew/bin/brew shellenv | source
 end
 
 alias gitroot='cd (git rev-parse --show-toplevel)'
@@ -82,7 +82,6 @@ set -gx LESSOPEN "| pygmentize -g %s"
 set -gx LESS '-R'
 set -gx PYENV_VERSION 3.8.13
 set PATH $PATH /Users/jsigman/.local/bin
-
 
 # Initialization scripts adaptation (needs manual intervention for exact paths and commands)
 # Example for pyenv, adjust according to specific init scripts provided or manually
@@ -95,7 +94,7 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+pyenv init --path | source
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
