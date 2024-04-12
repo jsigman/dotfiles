@@ -71,9 +71,6 @@ alias ls='ls --color=auto'
 if test -d /opt/homebrew/bin
    set -gx PATH /opt/homebrew/bin $PATH
    eval "$(/opt/homebrew/bin/brew shellenv)"
-   #set aliases
-   alias brew86="arch -x86_64 /opt/homebrew/bin/brew"
-   alias pyenv86="arch -x86_64 pyenv"
 end
 
 alias gitroot='cd (git rev-parse --show-toplevel)'
@@ -125,4 +122,4 @@ export PATH="$PATH:/Users/jsigman/.local/bin"
 
 
 # Note: For initializing other tools like pyenv, direnv, you'll need to manually find or adapt initialization code for fish
-echo Ran fish configuration
+echo "Ran fish configuration"
