@@ -85,12 +85,6 @@ set -gx LESS -R
 set -gx PYENV_VERSION 3.8.13
 set PATH $PATH /Users/jsigman/.local/bin
 
-# Initialization scripts adaptation (needs manual intervention for exact paths and commands)
-# Example for pyenv, adjust according to specific init scripts provided or manually
-pyenv init - | source
-direnv hook fish | source
-starship init fish | source
-
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
@@ -100,6 +94,12 @@ pyenv init --path | source
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+
+# Initialization scripts adaptation (needs manual intervention for exact paths and commands)
+# Example for pyenv, adjust according to specific init scripts provided or manually
+pyenv init - | source
+direnv hook fish | source
+starship init fish | source
 
 # to build emacs
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
