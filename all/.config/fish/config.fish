@@ -1,6 +1,8 @@
 # Function to handle terminal printing with conditions
-function vterm_printf;
-    if begin; [  -n "$TMUX" ]  ; and  string match -q -r "screen|tmux" "$TERM"; end
+function vterm_printf
+    if begin
+            [ -n "$TMUX" ]; and string match -q -r "screen|tmux" "$TERM"
+        end
         # tell tmux to pass the escape sequences through
         printf "\ePtmux;\e\e]%s\007\e\\" "$argv"
     else if string match -q -- "screen*" "$TERM"
@@ -11,10 +13,10 @@ function vterm_printf;
     end
 end
 
-if [ "$INSIDE_EMACS" = 'vterm' ]
+if [ "$INSIDE_EMACS" = vterm ]
     function clear
-        vterm_printf "51;Evterm-clear-scrollback";
-        tput clear;
+        vterm_printf "51;Evterm-clear-scrollback"
+        tput clear
     end
 end
 
@@ -24,7 +26,7 @@ function fish_title
     prompt_pwd
 end
 
-function vterm_prompt_end;
+function vterm_prompt_end
     vterm_printf '51;A'(whoami)'@'(hostname)':'(pwd)
 end
 functions --copy fish_prompt vterm_old_fish_prompt
@@ -60,7 +62,7 @@ end
 
 # Convert dcv-connect function
 function dcv-connect
-    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443 > /dev/null &
+    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443 >/dev/null &
     open -a "DCV Viewer" --args localhost:8443
 end
 
@@ -79,7 +81,7 @@ alias gitroot='cd (git rev-parse --show-toplevel)'
 
 # Export statements
 set -gx LESSOPEN "| pygmentize -g %s"
-set -gx LESS '-R'
+set -gx LESS -R
 set -gx PYENV_VERSION 3.8.13
 set PATH $PATH /Users/jsigman/.local/bin
 
