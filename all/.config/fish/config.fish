@@ -122,7 +122,3 @@ set -gx OPENAI_API_KEY (cat ~/.openai/emacs-key.txt)
 
 # Created by `pipx` on 2024-02-01 09:45:16
 export PATH="$PATH:/Users/jsigman/.local/bin"
-
-
-# Note: For initializing other tools like pyenv, direnv, you'll need to manually find or adapt initialization code for fish
-echo "Ran fish configuration"

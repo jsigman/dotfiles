@@ -23,7 +23,6 @@ eval "$(direnv hook bash)"
 
 direnv reload 2>/dev/null
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
-echo ran bash_profile
 alias ls='ls --color=auto'
 
 shopt -s histappend # append to history file, don't overwrite it
