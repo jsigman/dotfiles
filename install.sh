@@ -20,7 +20,7 @@ cd "$CLONE_DIR" && python3 install.py
 curl -sS https://starship.rs/install.sh | sh
 
 # Install other utilities
-sudo apt update && sudo apt install -y pandoc direnv tmux
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base
 
 # Add here the installation of Fish shell
 sudo apt install -y fish
