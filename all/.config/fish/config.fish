@@ -95,12 +95,6 @@ pyenv init --path | source
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 
-# Initialization scripts adaptation (needs manual intervention for exact paths and commands)
-# Example for pyenv, adjust according to specific init scripts provided or manually
-pyenv init - | source
-direnv hook fish | source
-starship init fish | source
-
 # to build emacs
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/llvm@12/lib"
@@ -122,3 +116,12 @@ set -gx OPENAI_API_KEY (cat ~/.openai/emacs-key.txt)
 
 # Created by `pipx` on 2024-02-01 09:45:16
 export PATH="$PATH:/Users/jsigman/.local/bin"
+
+
+# Initialization scripts adaptation (needs manual intervention for exact paths and commands)
+# Example for pyenv, adjust according to specific init scripts provided or manually
+pyenv init - | source
+starship init fish | source
+direnv hook fish | source
+
+direnv export fish | source # run once to load direnv environment on terminal start
