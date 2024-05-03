@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # coder dotfiles -y https://github.com/jsigman/dotfiles.git
@@ -20,7 +21,8 @@ cd "$CLONE_DIR" && python3 install.py
 curl -sS https://starship.rs/install.sh | sh
 
 # Install other utilities
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base
+sudo add-apt-repository ppa:rmescandon/yq
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq
 
 # Add here the installation of Fish shell
 sudo apt install -y fish
@@ -40,7 +42,7 @@ if ! grep -q "^$(which fish)$" /etc/shells; then
   echo "$(which fish)" | sudo tee -a /etc/shells
 fi
 
-# Change the default shell to Fish for the current user
-chsh -s $(which fish)
+# Change the default shell to Fish for the current user - I'm liking this less now
+# chsh -s $(which fish)
 
 echo "Installation and configuration completed."
