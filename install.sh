@@ -58,5 +58,6 @@ if ! command -v docker-compose >/dev/null 2>&1; then
   sudo chmod +x /usr/local/bin/docker-compose
 fi
 
+sudo systemctl start docker
 
 echo "Installation and configuration completed."
