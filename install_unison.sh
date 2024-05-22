@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -ex
 
 # Define the version and URLs
@@ -26,7 +27,7 @@ cd $DOWNLOAD_DIR
 tar -xzf $TAR_FILE
 
 # Check if the extraction was successful
-if [ ! -d "unison-${VERSION}-ubuntu-x86_64-static" ]; then
+if [ ! -d "$DOWNLOAD_DIR/unison-${VERSION}-ubuntu-x86_64-static" ]; then
   echo "Failed to extract the tar.gz file."
   exit 1
 fi
