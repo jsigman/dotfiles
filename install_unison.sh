@@ -26,22 +26,17 @@ cd $DOWNLOAD_DIR
 # Extract the tar.gz file
 tar -xzf $TAR_FILE
 
-# Check if the extraction was successful
-if [ ! -d "$DOWNLOAD_DIR/unison-${VERSION}-ubuntu-x86_64-static" ]; then
-  echo "Failed to extract the tar.gz file."
+# Check if the binaries exist directly in the Downloads directory
+if [ ! -f "$DOWNLOAD_DIR/bin/unison" ] || [ ! -f "$DOWNLOAD_DIR/bin/unison-fsmonitor" ]; then
+  echo "Failed to extract the tar.gz file or binaries are missing."
   exit 1
 fi
-
-# Navigate to the extracted directory
-cd unison-${VERSION}-ubuntu-x86_64-static
 
 # Install Unison binaries
 sudo cp bin/unison /usr/local/bin/
 sudo cp bin/unison-fsmonitor /usr/local/bin/
 
 # Clean up
-cd ..
-rm -rf unison-${VERSION}-ubuntu-x86_64-static
-rm $TAR_FILE
+rm -rf bin doc man CONTRIBUTING.md INSTALL.md LICENSE NEWS.md README.md $TAR_FILE
 
 echo "Unison ${VERSION} installed successfully!"
