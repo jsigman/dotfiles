@@ -61,4 +61,6 @@ fi
 sudo systemctl start docker
 sudo usermod -aG docker $USER
 
+./install_unison.sh
+
 echo "Installation and configuration completed."
