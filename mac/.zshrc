@@ -49,9 +49,6 @@ autoload -U select-word-style
 select-word-style bash
 
 source /Users/jsigman/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-alias brew86="arch -x86_64 /usr/local/bin/brew"
-alias pyenv86="arch -x86_64 pyenv"
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Created by `pipx` on 2024-02-01 09:45:16

@@ -18,6 +18,7 @@ Thumbs.db
 .dir-locals.el
 pyrightconfig.json
 .projectile
+.project
 .ob-jupyter/
 
 # python
