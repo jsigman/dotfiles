@@ -63,4 +63,7 @@ sudo usermod -aG docker $USER
 
 ./install_unison.sh
 
+sudo snap remove dvc
+sudo snap install dvc --classic --channel=stable
+
 echo "Installation and configuration completed."
