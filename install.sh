@@ -61,9 +61,15 @@ fi
 sudo systemctl start docker
 sudo usermod -aG docker $USER
 
+# For file syncing
 ./install_unison.sh
 
+# DVC > 3
 sudo snap remove dvc
 sudo snap install dvc --classic --channel=stable
+
+# NPM and language servers
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install --lts
 
 echo "Installation and configuration completed."

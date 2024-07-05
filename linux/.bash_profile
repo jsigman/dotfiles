@@ -33,3 +33,8 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate
 
 export LESSOPEN="| pygmentize -g %s"
 export LESS='-R'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
