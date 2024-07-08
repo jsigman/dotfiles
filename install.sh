@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 # coder dotfiles -y https://github.com/jsigman/dotfiles.git
 
