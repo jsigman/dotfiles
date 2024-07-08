@@ -69,7 +69,12 @@ sudo snap remove dvc
 sudo snap install dvc --classic --channel=stable
 
 # NPM and language servers
+sudo apt install rustc cargo # needed for texlab
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
 nvm install --lts
+
+~/.emacs.d/install_lsp_servers.sh
 
 echo "Installation and configuration completed."
