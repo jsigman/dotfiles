@@ -25,8 +25,8 @@ function coder-start() {
     coder start $CODER_USERNAME/$CODER_INSTANCE_NAME
 }
 function dcv-connect() {
-    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443 &
     open -a "DCV Viewer" --args localhost:8443
+    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443
 }
 
 alias ls='ls --color=auto'
