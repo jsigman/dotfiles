@@ -22,7 +22,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 # Install other utilities
 sudo add-apt-repository ppa:rmescandon/yq
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo
 
 # Configure Nvidia
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
@@ -70,8 +70,6 @@ sudo snap remove dvc
 sudo snap install dvc --classic --channel=stable
 
 # NPM and language servers
-sudo apt install rustc cargo # needed for texlab
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 source ~/.bashrc
 nvm install --lts
