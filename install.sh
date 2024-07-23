@@ -22,7 +22,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 # Install other utilities
 sudo add-apt-repository ppa:rmescandon/yq
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find nvidia-driver-535
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find nvidia-driver-535 build-essential
 
 # Configure Nvidia
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
@@ -63,7 +63,7 @@ sudo systemctl start docker
 sudo usermod -aG docker $USER
 
 # For file syncing
-./install_unison.sh
+OCAML_VERSION=5.2.0 ./install_unison.sh
 
 # DVC > 3
 sudo snap remove dvc
