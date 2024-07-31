@@ -25,6 +25,8 @@ direnv reload 2>/dev/null
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
 alias ls='ls --color=auto'
 
+alias sso='aws sso login --no-browser'
+
 shopt -s histappend # append to history file, don't overwrite it
 HISTSIZE=10000
 HISTFILESIZE=10000
@@ -38,3 +40,6 @@ export LESS='-R'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"

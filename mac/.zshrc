@@ -54,3 +54,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 # Created by `pipx` on 2024-02-01 09:45:16
 export PATH="$PATH:/Users/jsigman/.local/bin"
 export PATH="/opt/homebrew/opt/m4/bin:$PATH"
+export HOMEBREW_EDITOR="emacs -nw -q"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
