@@ -22,10 +22,38 @@ curl -sS https://starship.rs/install.sh | sh
 
 # Install other utilities
 sudo add-apt-repository ppa:rmescandon/yq
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find nvidia-driver-535 build-essential fzf
 
-# Configure Nvidia
+# Function to check if NVIDIA drivers are installed
+check_nvidia_drivers() {
+    if ! command -v nvidia-smi &> /dev/null; then
+        echo "NVIDIA drivers are not installed."
+        return 1
+    else
+        echo "NVIDIA drivers are already installed."
+        return 0
+    fi
+}
+
+# Function to get the latest NVIDIA driver version
+get_latest_nvidia_driver() {
+    apt-cache search nvidia-driver | grep -oP 'nvidia-driver-[0-9]+' | sort -V | tail -n1
+}
+
+# Check and install NVIDIA drivers if needed
+if ! check_nvidia_drivers; then
+    echo "Installing NVIDIA drivers..."
+    latest_driver=$(get_latest_nvidia_driver)
+    sudo apt update
+    sudo apt install -y $latest_driver
+    echo "Installed $latest_driver"
+else
+    echo "NVIDIA drivers are already installed. Skipping installation."
+fi
+
+# Configure Nvidia for display
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
+
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential fzf
 
 # Switch to multi-user target and then back to graphical target
 sudo systemctl isolate multi-user.target
