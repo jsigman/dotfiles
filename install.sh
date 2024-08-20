@@ -53,7 +53,16 @@ fi
 # Configure Nvidia for display
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential fzf
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential
+
+# update rust:
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
+rustup update
+
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # Switch to multi-user target and then back to graphical target
 sudo systemctl isolate multi-user.target
