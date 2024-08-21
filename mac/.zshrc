@@ -57,4 +57,5 @@ export PATH="/opt/homebrew/opt/m4/bin:$PATH"
 export HOMEBREW_EDITOR="emacs -nw -q"
 
 # Set up fzf key bindings and fuzzy completion
+export FZF_CTRL_T_COMMAND=""
 source <(fzf --zsh)
