@@ -33,3 +33,6 @@ export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
 # Created by `pipx` on 2024-02-01 09:45:16
 export PATH="$PATH:/Users/jsigman/.local/bin"
 alias sso='aws sso login'
+
+# fzf
+export FZF_DEFAULT_OPTS="--bind ctrl-t:ignore $FZF_DEFAULT_OPTS"
