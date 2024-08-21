@@ -53,7 +53,7 @@ fi
 # Configure Nvidia for display
 sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 
-sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential
+sudo apt update && sudo apt install -y pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential sqlite3
 
 # update rust:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
