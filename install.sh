@@ -25,7 +25,7 @@ sudo add-apt-repository ppa:rmescandon/yq
 
 # Function to check if NVIDIA drivers are installed
 check_nvidia_drivers() {
-    if ! command -v nvidia-smi &> /dev/null; then
+    if ! command -v nvidia-smi &>/dev/null; then
         echo "NVIDIA drivers are not installed."
         return 1
     else
@@ -72,28 +72,28 @@ sudo systemctl isolate graphical.target
 sudo systemctl enable dcvserver
 
 if ! command -v docker >/dev/null 2>&1; then
-  echo "Installing docker"
-  # Add Docker's official GPG key:
-  sudo apt-get update
-  sudo apt-get install ca-certificates curl
-  sudo install -m 0755 -d /etc/apt/keyrings
-  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    echo "Installing docker"
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-  # Add the repository to Apt sources:
-  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    # Add the repository to Apt sources:
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-  # Update and install
-  sudo apt-get update
-  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    # Update and install
+    sudo apt-get update
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 fi
 
 # Install docker-compose
 if ! command -v docker-compose >/dev/null 2>&1; then
-  echo "Installing docker-compose"
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
+    echo "Installing docker-compose"
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 fi
 
 sudo systemctl start docker
