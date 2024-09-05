@@ -51,4 +51,5 @@ autoload -U select-word-style && select-word-style bash
 
 # FZF configuration
 export FZF_CTRL_T_COMMAND=""
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
