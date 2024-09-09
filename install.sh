@@ -18,7 +18,7 @@ mkdir -p "$BACKUP_DIR"
 cd "$CLONE_DIR" && python3 install.py
 
 # Install Starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Install other utilities
 sudo add-apt-repository ppa:rmescandon/yq
