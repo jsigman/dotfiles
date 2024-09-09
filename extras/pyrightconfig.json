@@ -19,6 +19,6 @@
   "useLibraryCodeForTypes": true,
   "autoSearchPaths": true,
   "autoImportCompletions": false,
-  "pythonVersion": "3.8.13"
-  "stubPath": "typings",
+  "pythonVersion": "3.12.5",
+  "stubPath": "typings"
 }

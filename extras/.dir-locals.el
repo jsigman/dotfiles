@@ -1,15 +1,10 @@
 ((nil
   .
-  ((flycheck-disabled-checkers . (python-mypy))
-   (flycheck-flake8rc . ".flake8")
-   (lsp-file-watch-threshold . 500)
-   (projectile-indexing-method . hybrid)
-   (eval . (setq-local cape-file-directory (projectile-project-root)))
+  ((lsp-file-watch-threshold . 500)
    (eval .
-         (setq-local lsp-file-watch-ignored-directories
-                     (append
-                      '("[/\\\\]\\data\\'")
-                      lsp-file-watch-ignored-directories)))))
+         (setq-local cape-file-directory
+                     (when-let ((project (project-current)))
+                       (project-root project))))))
  (org-mode
   .
   ((eval .
