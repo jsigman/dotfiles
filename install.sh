@@ -3,6 +3,19 @@ set -ex
 
 # coder dotfiles -y https://github.com/jsigman/dotfiles.git
 
+# Define lock file path
+LOCKFILE=/var/lib/dpkg/lock-frontend
+
+# Acquire the lock
+exec 200>"$LOCKFILE"
+flock -n 200 || {
+    echo "Failed to acquire lock on $LOCKFILE. Exiting."
+    exit 1
+}
+
+# Trap to release lock on exit or error
+trap 'echo "Releasing dpkg lock..."; flock -u 200' EXIT
+
 # Preamble
 CLONE_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/dotfiles_backup"
