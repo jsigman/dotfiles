@@ -5,18 +5,16 @@ set -ex
 
 # Define lock file path
 LOCKFILE=/var/lib/dpkg/lock-frontend
+LOCKFD=200
 
 # Acquire the lock with sudo
-sudo bash -c "exec 200>$LOCKFILE; flock -n 200 || exit 1" || {
+sudo bash -c "exec $LOCKFD>$LOCKFILE && flock -n $LOCKFD" || {
     echo "Failed to acquire lock on $LOCKFILE. Exiting."
     exit 1
 }
 
-# Trap to release lock on exit or error
-trap 'echo "Releasing dpkg lock..."; sudo bash -c "flock -u 200"' EXIT
-
-# Your script logic here
-echo "Lock acquired successfully."
+# Trap to release the lock
+trap 'echo "Releasing dpkg lock..."; sudo bash -c "flock -u $LOCKFD"' EXIT
 
 # Preamble
 CLONE_DIR="$HOME/dotfiles"
