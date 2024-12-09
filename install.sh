@@ -51,13 +51,18 @@ check_nvidia_drivers() {
 get_latest_nvidia_driver() {
     apt-cache search nvidia-driver | grep -oP 'nvidia-driver-[0-9]+' | sort -V | tail -n1
 }
+NVIDIA_DRIVER_VERSION="nvidia-driver-560"
 
 # Check and install NVIDIA drivers if needed
 if ! check_nvidia_drivers; then
     echo "Installing NVIDIA drivers..."
-    latest_driver=$(get_latest_nvidia_driver)
     sudo apt update
-    sudo apt install -y $latest_driver
+    # if NVIDIA_DRIVER_VERSION not set, install the latest driver
+    if [ -z "$NVIDIA_DRIVER_VERSION" ]; then
+        NVIDIA_DRIVER_VERSION=$(get_latest_nvidia_driver)
+    fi
+    sudo apt install -y $NVIDIA_DRIVER_VERSION
+
     echo "Installed $latest_driver"
 else
     echo "NVIDIA drivers are already installed. Skipping installation."
