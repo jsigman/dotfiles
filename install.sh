@@ -15,20 +15,6 @@ fi
 # Proceed with the script
 echo "No conflicting processes detected. Proceeding with installation..."
 
-# Uninstall Starship if already installed
-if command -v starship &>/dev/null; then
-    echo "Starship detected. Uninstalling..."
-    sudo rm -f /usr/local/bin/starship
-fi
-
-# Uninstall Pyenv if already installed
-if command -v pyenv &>/dev/null; then
-    echo "Pyenv detected. Uninstalling..."
-    rm -rf ~/.pyenv
-    sed -i '/export PYENV_ROOT/d' ~/.bashrc ~/.zshrc
-    sed -i '/pyenv init/d' ~/.bashrc ~/.zshrc
-fi
-
 # Preamble
 CLONE_DIR="$HOME/dotfiles"
 BACKUP_DIR="$HOME/dotfiles_backup"
