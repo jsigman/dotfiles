@@ -93,7 +93,7 @@ OCAML_VERSION=5.2.0 ./install_unison.sh
 
 # Install pyenv
 curl https://pyenv.run | bash
-pyenv install 3.12.4
+$HOME/.pyenv/bin/pyenv install 3.12.4
 
 # Install DVC
 sudo snap remove dvc
