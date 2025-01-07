@@ -72,6 +72,13 @@ sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 sudo apt update && sudo apt install -y \
     pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential sqlite3
 
+# Install docker-compose
+if ! command -v docker-compose >/dev/null 2>&1; then
+    echo "Installing docker-compose"
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+fi
+
 # Update Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
