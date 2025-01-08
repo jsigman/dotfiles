@@ -36,3 +36,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export FZF_CTRL_T_COMMAND=""
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# if .profile exists, source it
+if [ -f "$HOME/.profile" ]; then
+    source "$HOME/.profile"
+fi
