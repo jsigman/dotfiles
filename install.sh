@@ -98,8 +98,10 @@ sudo systemctl enable dcvserver
 # File syncing
 OCAML_VERSION=5.2.0 ./install_unison.sh
 
-# Install pyenv
-curl https://pyenv.run | bash
+# Install pyenv if pyenv is not installed
+if ! command -v pyenv >/dev/null 2>&1; then
+    curl https://pyenv.run | bash
+fi
 $HOME/.pyenv/bin/pyenv install 3.12.4
 
 # Install DVC
