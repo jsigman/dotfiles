@@ -41,3 +41,6 @@ export FZF_CTRL_T_COMMAND=""
 if [ -f "$HOME/.profile" ]; then
     source "$HOME/.profile"
 fi
+
+# Time zone
+export TZ="America/New_York"
