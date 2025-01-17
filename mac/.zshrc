@@ -80,3 +80,10 @@ autoload -U select-word-style && select-word-style bash
 export FZF_CTRL_T_COMMAND=""
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+if command -v eza >/dev/null 2>&1; then
+  alias ls='eza'
+  alias ll='eza -l'      # Long listing format
+  alias la='eza -la'     # Include hidden files
+  alias lt='eza --tree'  # Tree view
+fi
