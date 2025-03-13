@@ -1,5 +1,14 @@
 # Essential PATH additions
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:/opt/homebrew/opt/m4/bin:/opt/homebrew/opt/llvm/bin:$PATH:/Users/jsigman/.local/bin"
+# Initialize PATH with system defaults
+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Add directories in order of precedence (highest first)
+PATH="$HOME/.cargo/bin:$PATH"                    # Rust binaries
+PATH="$HOME/.local/bin:$PATH"                    # User local binaries
+PATH="/opt/homebrew/opt/llvm/bin:$PATH"          # LLVM tools
+PATH="/opt/homebrew/opt/m4/bin:$PATH"            # M4 macro processor
+PATH="/usr/local/opt/openjdk/bin:$PATH"          # OpenJDK
+PATH="/usr/local/sbin:$PATH"                     # Local system binaries
 
 # Basic environment variables
 export EDITOR='emacs -nw'
