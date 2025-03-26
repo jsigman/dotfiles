@@ -12,8 +12,9 @@ PATH="/usr/local/sbin:$PATH"                     # Local system binaries
 
 # Basic environment variables
 export EDITOR='emacs -nw'
-export LESSOPEN="| pygmentize -g %s"
-export LESS='-R'
+export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"
+export LESS='-R -X -F --tabs=4'
+
 export HOMEBREW_EDITOR="emacs -nw -q"
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
 
