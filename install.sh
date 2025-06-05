@@ -5,11 +5,11 @@ set -ex
 
 # Check for unattended-upgrades process
 if pgrep -x "unattended-upgrade" >/dev/null; then
-    echo "The unattended-upgrades process is currently running."
-    echo "Please wait for it to complete or stop it gracefully using:"
-    echo "    sudo systemctl stop unattended-upgrades"
-    echo "Then restart this script."
-    exit 1
+  echo "The unattended-upgrades process is currently running."
+  echo "Please wait for it to complete or stop it gracefully using:"
+  echo "    sudo systemctl stop unattended-upgrades"
+  echo "Then restart this script."
+  exit 1
 fi
 
 # Proceed with the script
@@ -37,32 +37,32 @@ sudo add-apt-repository ppa:rmescandon/yq -y
 
 # Function to check if NVIDIA drivers are installed
 check_nvidia_drivers() {
-    if ! command -v nvidia-smi &>/dev/null; then
-        echo "NVIDIA drivers are not installed."
-        return 1
-    else
-        echo "NVIDIA drivers are already installed."
-        return 0
-    fi
+  if ! command -v nvidia-smi &>/dev/null; then
+    echo "NVIDIA drivers are not installed."
+    return 1
+  else
+    echo "NVIDIA drivers are already installed."
+    return 0
+  fi
 }
 
 # Function to get the latest NVIDIA driver version
 get_latest_nvidia_driver() {
-    apt-cache search nvidia-driver | grep -oP 'nvidia-driver-[0-9]+' | sort -V | tail -n1
+  apt-cache search nvidia-driver | grep -oP 'nvidia-driver-[0-9]+' | sort -V | tail -n1
 }
 NVIDIA_DRIVER_VERSION="nvidia-driver-560"
 
 # Check and install NVIDIA drivers if needed
 if ! check_nvidia_drivers; then
-    echo "Installing NVIDIA drivers..."
-    sudo apt update
-    if [ -z "$NVIDIA_DRIVER_VERSION" ]; then
-        NVIDIA_DRIVER_VERSION=$(get_latest_nvidia_driver)
-    fi
-    sudo apt install -y $NVIDIA_DRIVER_VERSION
-    echo "Installed $NVIDIA_DRIVER_VERSION"
+  echo "Installing NVIDIA drivers..."
+  sudo apt update
+  if [ -z "$NVIDIA_DRIVER_VERSION" ]; then
+    NVIDIA_DRIVER_VERSION=$(get_latest_nvidia_driver)
+  fi
+  sudo apt install -y $NVIDIA_DRIVER_VERSION
+  echo "Installed $NVIDIA_DRIVER_VERSION"
 else
-    echo "NVIDIA drivers are already installed. Skipping installation."
+  echo "NVIDIA drivers are already installed. Skipping installation."
 fi
 
 # Configure Nvidia for display
@@ -70,13 +70,13 @@ sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 
 # Install necessary packages
 sudo apt update && sudo apt install -y \
-    pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential sqlite3
+  pandoc direnv tmux texlive-latex-base yq rustc cargo fd-find build-essential sqlite3
 
 # Install docker-compose
 if ! command -v docker-compose >/dev/null 2>&1; then
-    echo "Installing docker-compose"
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
+  echo "Installing docker-compose"
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 fi
 
 # Update Rust
@@ -103,7 +103,7 @@ OCAML_VERSION=5.2.0 ./install_unison.sh
 
 # Install pyenv if pyenv is not installed
 if ! command -v pyenv >/dev/null 2>&1; then
-    curl https://pyenv.run | bash
+  curl https://pyenv.run | bash
 fi
 $HOME/.pyenv/bin/pyenv install 3.12.4
 
@@ -116,5 +116,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 . "$HOME/.nvm/nvm.sh" && nvm install --lts
 
 ~/.emacs.d/install_lsp_servers.sh
+
+# Shortcuts
+echo "file://$HOME/Desktop" >>~/.config/gtk-3.0/bookmarks
+echo "file:///data Data drive" >>~/.config/gtk-3.0/bookmarks
 
 echo "Installation and configuration completed."
