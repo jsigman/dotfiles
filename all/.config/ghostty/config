@@ -2,3 +2,4 @@ shell-integration-features = no-cursor
 cursor-style = block
 font-size = 17
 scrollback-limit = 10485760
+keybind = shift+enter=text:\n
