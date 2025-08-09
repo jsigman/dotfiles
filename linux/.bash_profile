@@ -18,11 +18,12 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 # Set HISTFILE depending on the host
 case "$(hostname)" in
 iml)
-    export HISTFILE=/data/ds/users/jsigman/.bash_history
+	export HISTFILE=/data/ds/users/jsigman/.bash_history
+	;;
 *)
-    export HISTFILE="$HOME/.bash_history"
+	export HISTFILE="$HOME/.bash_history"
+	;;
 esac
-
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
 
 export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"
@@ -38,7 +39,7 @@ export FZF_CTRL_T_COMMAND=""
 
 # if .profile exists, source it
 if [ -f "$HOME/.profile" ]; then
-    source "$HOME/.profile"
+	source "$HOME/.profile"
 fi
 
 # Time zone
