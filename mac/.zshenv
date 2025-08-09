@@ -24,11 +24,6 @@ export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
 # Homebrew setup (if needed before other tools)
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Pyenv setup (minimal version)
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
 # Essential build-related variables
 export LDFLAGS="-L/opt/homebrew/opt/llvm@12/lib -L/opt/homebrew/lib -L/opt/homebrew/lib/gcc/11"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm@12/include -I/opt/homebrew/include"

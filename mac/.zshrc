@@ -65,7 +65,6 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias sso='aws sso login'
 
 # Interactive shell configurations
-eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 direnv reload 2>/dev/null
 

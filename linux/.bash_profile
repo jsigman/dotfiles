@@ -1,12 +1,5 @@
 bind 'set completion-ignore-case on'
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-export PYENV_VERSION=3.12.0
-eval "$(pyenv init -)"
-
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
 
@@ -26,10 +19,8 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 case "$(hostname)" in
 iml)
     export HISTFILE=/data/ds/users/jsigman/.bash_history
-    ;;
 *)
     export HISTFILE="$HOME/.bash_history"
-    ;;
 esac
 
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
