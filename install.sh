@@ -84,6 +84,20 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup update
 
+# Install Go
+if ! command -v go >/dev/null 2>&1; then
+  echo "Installing Go..."
+  GO_VERSION="1.21.5"
+  wget -O go.tar.gz "https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go
+  sudo tar -C /usr/local -xzf go.tar.gz
+  rm go.tar.gz
+  echo 'export PATH=$PATH:/usr/local/go/bin' >> "$HOME/.bashrc"
+  export PATH=$PATH:/usr/local/go/bin
+else
+  echo "Go is already installed."
+fi
+
 # Glow, markdown viewer
 go install github.com/charmbracelet/glow@latest
 
