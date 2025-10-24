@@ -92,7 +92,7 @@ if ! command -v go >/dev/null 2>&1; then
   sudo rm -rf /usr/local/go
   sudo tar -C /usr/local -xzf go.tar.gz
   rm go.tar.gz
-  echo 'export PATH=$PATH:/usr/local/go/bin' >> "$HOME/.bashrc"
+  echo 'export PATH=$PATH:/usr/local/go/bin' >>"$HOME/.bashrc"
   export PATH=$PATH:/usr/local/go/bin
 else
   echo "Go is already installed."
@@ -103,7 +103,7 @@ go install github.com/charmbracelet/glow@latest
 
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install~/.fzf/install
 
 # Switch to multi-user target and back to graphical target
 sudo systemctl isolate multi-user.target
@@ -129,6 +129,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ~/.emacs.d/install_lsp_servers.sh
 
 # Shortcuts
+mkdir -p ~/.config/gtk-3.0/bookmarks
 echo "file://$HOME/Desktop" >>~/.config/gtk-3.0/bookmarks
 echo "file:///data Data drive" >>~/.config/gtk-3.0/bookmarks
 
