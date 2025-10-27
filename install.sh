@@ -103,7 +103,7 @@ go install github.com/charmbracelet/glow@latest
 
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install~/.fzf/install
+~/.fzf/install --all
 
 # Switch to multi-user target and back to graphical target
 sudo systemctl isolate multi-user.target
