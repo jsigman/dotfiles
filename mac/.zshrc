@@ -86,3 +86,4 @@ if command -v eza >/dev/null 2>&1; then
   alias la='eza -la'     # Include hidden files
   alias lt='eza --tree'  # Tree view
 fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
