@@ -55,8 +55,8 @@ function coder-start() {
 }
 
 function dcv-connect() {
-    open -a "DCV Viewer" --args localhost:8444
-    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8444:8444
+    open -a "DCV Viewer" --args localhost:8443
+    coder port-forward $CODER_USERNAME/$CODER_INSTANCE_NAME --tcp 8443:8443
 }
 
 # Aliases
@@ -67,6 +67,8 @@ alias sso='aws sso login'
 # Interactive shell configurations
 eval "$(direnv hook zsh)"
 direnv reload 2>/dev/null
+# Allow # comments in interactive mode
+setopt INTERACTIVE_COMMENTS
 
 # Completion and word style
 autoload -U compinit && compinit
