@@ -14,16 +14,7 @@ HISTSIZE=10000
 HISTFILESIZE=10000
 HISTTIMEFORMAT="%d/%m/%y %T "
 
-# Redirect Bash history to a persistent location
-# Set HISTFILE depending on the host
-case "$(hostname)" in
-iml)
-	export HISTFILE=/data/ds/users/jsigman/.bash_history
-	;;
-*)
-	export HISTFILE="$HOME/.bash_history"
-	;;
-esac
+export HISTFILE="$HOME/.bash_history"
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
 
 export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"

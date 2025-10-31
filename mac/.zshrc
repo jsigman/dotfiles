@@ -67,6 +67,8 @@ alias sso='aws sso login'
 # Interactive shell configurations
 eval "$(direnv hook zsh)"
 direnv reload 2>/dev/null
+# Allow # comments in interactive mode
+setopt INTERACTIVE_COMMENTS
 
 # Completion and word style
 autoload -U compinit && compinit

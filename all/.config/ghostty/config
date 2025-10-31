@@ -1,4 +1,4 @@
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-terminfo
 cursor-style = block
 font-size = 17
 scrollback-limit = 10485760
