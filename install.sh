@@ -99,7 +99,7 @@ else
 fi
 
 # Glow, markdown viewer
-go install github.com/charmbracelet/glow@latest
+sudo snap install glow
 
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

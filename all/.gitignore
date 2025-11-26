@@ -17,9 +17,12 @@ Thumbs.db
 \#*
 .dir-locals.el
 pyrightconfig.json
+pyrefly.toml
+ty.toml
 .projectile
 .project
 .ob-jupyter/
+
 
 # python
 typings/

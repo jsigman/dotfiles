@@ -89,3 +89,4 @@ if command -v eza >/dev/null 2>&1; then
   alias lt='eza --tree'  # Tree view
 fi
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
