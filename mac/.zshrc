@@ -47,7 +47,9 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]] \
 fi
 # Custom functions
 function remote() {
-    ssh -t "${REMOTE_HOST}" "cd ${REMOTE_PATH} && exec \$SHELL -l"
+    local relative_path=$(git rev-parse --show-prefix 2>/dev/null)
+    local remote_path="${REMOTE_BASE_PATH}/${relative_path}"
+    ssh -t "${REMOTE_HOST}" "cd ${remote_path} && exec \$SHELL -l"
 }
 
 function coder-start() {
