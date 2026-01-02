@@ -119,8 +119,7 @@ OCAML_VERSION=5.2.0 ./install_unison.sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install DVC
-sudo snap remove dvc
-sudo snap install dvc --classic --channel=stable
+uv tool install "dvc[s3]"
 
 # Install NVM and language servers
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
