@@ -22,7 +22,7 @@ ty.toml
 .projectile
 .project
 .ob-jupyter/
-
+.agent-shell/
 
 # python
 typings/
