@@ -115,8 +115,11 @@ sudo systemctl enable dcvserver
 # File syncing
 OCAML_VERSION=5.2.0 ./install_unison.sh
 
-# Install curl
+# Install UV
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Add UV to PATH for current session
+source "$HOME/.local/bin/env"
 
 # Install DVC
 uv tool install "dvc[s3]"
