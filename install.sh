@@ -84,6 +84,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup update
 
+# install claude
+curl -fsSL https://claude.ai/install.sh | bash
+
 # Install Go
 if ! command -v go >/dev/null 2>&1; then
   echo "Installing Go..."
