@@ -34,7 +34,7 @@ log/
 # etc...
 
 # I often use these folders to store non-source material
-/notes
+notes
 
 # direnv
 /.envrc

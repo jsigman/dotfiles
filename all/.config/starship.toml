@@ -3,56 +3,21 @@ add_newline = false
 command_timeout = 3000
 format = """
 $hostname\
-$shlvl\
-$kubernetes\
 $directory\
 $git_branch\
-$git_commit\
 $git_state\
-$git_status\
-$hg_branch\
-$docker_context\
-$package\
-$cmake\
-$dart\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
-$java\
-$julia\
-$kotlin\
-$nim\
-$ocaml\
-$perl\
-$php\
-$purescript\
+$direnv\
 $python\
-$ruby\
+$golang\
 $rust\
-$scala\
-$swift\
+$nodejs\
+$docker_context\
+$kubernetes\
 $terraform\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
 $aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$custom\
 $cmd_duration\
 $line_break\
-$lua\
 $jobs\
-$time\
-$status\
-$shell\
 $character"""
 
 [directory]
@@ -68,22 +33,37 @@ symbol=""
 
 [git_branch]
 symbol = "🌱 "
-truncation_length = 20
-truncation_symbol = ""
 ignore_branches = ["master", "main"]
 
 [python]
-disabled=false
-symbol=""
-pyenv_version_name = true
-pyenv_prefix = ""
-style="red"
+disabled = false
+format = '[🐍 ]($style)'
+style = 'yellow'
 
 [aws]
-disabled=true
+disabled = false
+format = '[☁️ $duration]($style) '
+expiration_symbol = '⚠️'
+style = 'yellow'
 
 [hostname]
-disabled=false
-ssh_only=true
-ssh_symbol=''
-format='[$ssh_symbol$hostname]($style) '
+disabled = false
+ssh_only = true
+format = '[📡 $hostname ]($style)'
+style = 'bold white on red'
+
+[package]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_status]
+disabled = true
+
+[direnv]
+disabled = true
+format = '[$loaded]($style) '
+style = 'green'
+loaded_msg = '✓'
+unloaded_msg = ''
