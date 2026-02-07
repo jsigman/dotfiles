@@ -49,7 +49,7 @@ style = 'yellow'
 [hostname]
 disabled = false
 ssh_only = true
-format = '[📡 $hostname ]($style)'
+format = '[🖥️ $hostname]($style) '
 style = 'bg:red fg:white bold'
 
 [package]
