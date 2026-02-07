@@ -50,7 +50,7 @@ style = 'yellow'
 disabled = false
 ssh_only = true
 format = '[📡 $hostname ]($style)'
-style = 'bold white on red'
+style = 'bg:red fg:white bold'
 
 [package]
 disabled = true
