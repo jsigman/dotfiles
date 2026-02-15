@@ -10,7 +10,6 @@ $direnv\
 $python\
 $golang\
 $rust\
-$nodejs\
 $docker_context\
 $kubernetes\
 $terraform\
