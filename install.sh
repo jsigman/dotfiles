@@ -128,7 +128,7 @@ source "$HOME/.local/bin/env"
 uv tool install "dvc[s3]"
 
 # Install NVM and language servers
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 . "$HOME/.nvm/nvm.sh" && nvm install --lts
 
 ~/.emacs.d/install_lsp_servers.sh
