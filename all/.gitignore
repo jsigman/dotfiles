@@ -45,3 +45,4 @@ lsyncd.conf
 
 # AI
 CLAUDE.md
+.claude/
