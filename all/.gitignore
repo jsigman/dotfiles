@@ -3,6 +3,7 @@ npm-debug.log
 
 # Mac
 .DS_Store
+._*
 
 # Windows
 Thumbs.db
