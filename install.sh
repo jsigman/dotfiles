@@ -134,7 +134,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 ~/.emacs.d/install_lsp_servers.sh
 
 # Shortcuts
-mkdir -p ~/.config/gtk-3.0/bookmarks
+mkdir -p ~/.config/gtk-3.0
 echo "file://$HOME/Desktop" >>~/.config/gtk-3.0/bookmarks
 echo "file:///data Data drive" >>~/.config/gtk-3.0/bookmarks
 
