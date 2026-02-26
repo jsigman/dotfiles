@@ -48,7 +48,7 @@ echo "Configuring Emacs with imagemagick, tree-sitter, and native compilation...
 ./configure \
   --with-imagemagick \
   --with-tree-sitter \
-  --with-native-compilation=aot \
+  --with-native-compilation \
   --with-json \
   --with-mailutils
 
