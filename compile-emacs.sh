@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Prevent interactive prompts during installation
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
+
 # Compile Emacs from source with modern features
 
 EMACS_DIR="emacs"
