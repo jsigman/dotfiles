@@ -1,6 +1,10 @@
 #!/bin/bash
 set -ex
 
+# Prevent interactive prompts during installation
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
+
 # coder dotfiles -y https://github.com/jsigman/dotfiles.git
 
 # Check for unattended-upgrades process
