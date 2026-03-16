@@ -108,9 +108,6 @@ fi
 # Glow, markdown viewer
 sudo snap install glow
 
-# Compile and install Emacs from source
-./compile-emacs.sh
-
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
