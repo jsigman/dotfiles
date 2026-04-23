@@ -13,7 +13,7 @@ PATH="/usr/local/sbin:$PATH"                     # Local system binaries
 export PATH
 
 # Basic environment variables
-export EDITOR='emacs -nw'
+export EDITOR='emacs -Q -nw'
 export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"
 export LESS='-R -X -F --tabs=4'
 

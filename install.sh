@@ -33,8 +33,8 @@ mkdir -p "$BACKUP_DIR"
 # Navigate to the clone directory and run the install script
 cd "$CLONE_DIR" && python3 install.py
 
-# Install Starship
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+# Install Starship to user directory (no sudo required)
+curl -sS https://starship.rs/install.sh | sh -s -- -y --bin-dir "$HOME/.local/bin"
 
 # Install other utilities
 sudo add-apt-repository ppa:rmescandon/yq -y
