@@ -136,6 +136,7 @@ uv tool install "dvc[s3]"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 . "$HOME/.nvm/nvm.sh" && nvm install --lts
 
+sudo snap install emacs --beta --classic
 ~/.emacs.d/install_lsp_servers.sh
 
 # Shortcuts
