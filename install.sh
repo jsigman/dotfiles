@@ -75,7 +75,7 @@ sudo nvidia-xconfig --preserve-busid --enable-all-gpus
 
 # Install necessary packages
 sudo apt update && sudo apt install -y \
-  pandoc direnv tmux texlive-latex-base yq fd-find build-essential sqlite3 libvterm-dev
+  pandoc direnv tmux texlive-latex-base yq fd-find build-essential sqlite3 libvterm-dev bat
 
 # Install docker-compose
 if ! command -v docker-compose >/dev/null 2>&1; then

@@ -14,14 +14,9 @@ export PATH
 
 # Basic environment variables
 export EDITOR='emacs -Q -nw'
-export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"
-export LESS='-R -X -F --tabs=4'
 
 export HOMEBREW_EDITOR="emacs -nw -q"
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
-
-# OpenAI API key (consider moving this to a more secure location if needed)
-export OPENAI_API_KEY=$(cat ~/.openai/emacs-key.txt)
 
 # Homebrew setup (needed for non-login shells like vterm)
 eval "$(/opt/homebrew/bin/brew shellenv)"

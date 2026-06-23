@@ -6,6 +6,7 @@ eval "$(direnv hook bash)"
 direnv reload 2>/dev/null
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
 alias ls='ls --color=auto'
+alias bat='batcat'
 
 alias sso='aws sso login --no-browser'
 
@@ -17,8 +18,6 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTFILE="$HOME/.bash_history"
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # immediate access to history from all terms
 
-export LESSOPEN="| pygmentize -f terminal -l %s 2>/dev/null || pygmentize -f terminal -g %s"
-export LESS='-R -X -F --tabs=4'
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
