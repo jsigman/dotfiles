@@ -1,5 +1,10 @@
 bind 'set completion-ignore-case on'
 
+# Enable 24-bit truecolor support for Ghostty terminal
+if [[ "$TERM" == "xterm-ghostty" ]]; then
+    export COLORTERM=truecolor
+fi
+
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
 

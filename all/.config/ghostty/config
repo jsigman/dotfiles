@@ -1,6 +1,21 @@
+# Terminal behavior
 shell-integration-features = no-cursor
 cursor-style = block
-font-size = 17
 scrollback-limit = 10485760
 keybind = shift+enter=text:\n
 macos-option-as-alt = true
+
+# Font configuration
+font-family = Roboto Mono
+font-size = 17
+
+# Theme and colors
+theme = dark
+background-opacity = 1.0
+
+# Terminal capabilities
+term = xterm-ghostty
+
+# Copy terminfo to remote hosts on SSH
+# This ensures the remote system has xterm-ghostty terminfo
+copy-on-select = false
