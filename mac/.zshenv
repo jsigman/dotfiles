@@ -17,6 +17,7 @@ export EDITOR='emacs -Q -nw'
 
 export HOMEBREW_EDITOR="emacs -nw -q"
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
+export GLOW_CONFIG_HOME="${HOME}/.config/glow"
 
 # Homebrew setup (needed for non-login shells like vterm)
 eval "$(/opt/homebrew/bin/brew shellenv)"

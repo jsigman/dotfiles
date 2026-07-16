@@ -10,6 +10,7 @@ eval "$(direnv hook bash)"
 
 direnv reload 2>/dev/null
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgreprc"
+export GLOW_CONFIG_HOME="${HOME}/.config/glow"
 alias ls='ls --color=auto'
 alias bat='batcat'
 
