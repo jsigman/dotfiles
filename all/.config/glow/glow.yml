@@ -1,0 +1,3 @@
+# Glow configuration
+# Set width to 0 to disable wrapping (use full terminal width)
+width: 0
