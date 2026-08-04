@@ -1,5 +1,8 @@
 eval "$(starship init zsh)"
 
+# XDG Base Directory specification
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # vterm_printf function for vterm compatibility
 vterm_printf() {
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then

@@ -6,11 +6,10 @@ keybind = shift+enter=text:\n
 macos-option-as-alt = true
 
 # Font configuration
-font-family = Roboto Mono
 font-size = 17
 
 # Theme and colors
-theme = dark
+theme = Catppuccin Mocha
 background-opacity = 1.0
 
 # Terminal capabilities

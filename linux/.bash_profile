@@ -1,5 +1,8 @@
 bind 'set completion-ignore-case on'
 
+# XDG Base Directory specification
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Enable 24-bit truecolor support for Ghostty terminal
 if [[ "$TERM" == "xterm-ghostty" ]]; then
     export COLORTERM=truecolor
