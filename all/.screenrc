@@ -1,4 +1,17 @@
 shell -$SHELL # so that it loads .bash_profile / .zprofile
 shell -$SHELL -c "direnv reload 2>/dev/null; exec $SHELL"
+
+# Terminal settings for modern terminals
+term screen-256color
 termcapinfo xterm* ti@:te@
+
+# Enable 256 colors
+attrcolor b ".I"
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# Scrollback buffer
 defscrollback 10000
+
+# Better UTF-8 support
+defutf8 on
