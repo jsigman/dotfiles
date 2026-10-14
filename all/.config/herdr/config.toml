@@ -1,2 +1,19 @@
+onboarding = false
 [terminal]
 shell_mode = "login"
+new_cwd = "~/infinia/iml/products/engines/appeals"
+
+[keys]
+prefix = "ctrl+]"
+
+focus_pane_left  = ["prefix+h", "ctrl+alt+b"]
+focus_pane_right = ["prefix+l", "ctrl+alt+f"]
+focus_pane_up    = ["prefix+k", "ctrl+alt+p"]
+focus_pane_down  = ["prefix+j", "ctrl+alt+n"]
+
+[ui]
+tab_bar_right = [{ type = "hostname" }]
+confirm_close = true
+
+[ui.sidebar.agents]
+rows = [["state_icon", "machine", "workspace", "tab"], ["agent"]]
