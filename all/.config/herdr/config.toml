@@ -1,7 +1,6 @@
 onboarding = false
 [terminal]
 shell_mode = "login"
-new_cwd = "~/infinia/iml/products/engines/appeals"
 
 [keys]
 prefix = "ctrl+]"
